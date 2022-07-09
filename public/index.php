@@ -1,3 +1,5 @@
+<?php require '../bootstrap.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +12,14 @@
 </head>
 
 <body>
-  <h2>Curso de PHP</h2>
-
   <div class="container">
-    <?php require load(); ?>
+    <?php 
+      try {
+        require load(); 
+      } catch(Exception $e) {
+        echo $e->getMessage();
+      }
+    ?>
   </div>
 </body>
 
